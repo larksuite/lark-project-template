@@ -1,0 +1,94 @@
+{
+  "agent_info": {
+    "name": "Test plug-in",
+    "integrate_points": [
+      {
+        "type": "DASHBOARD",
+        "key": "dashboard_9w9z",
+        "name": "链接汇总",
+        "description": "详情页 Tab 功能",
+        "icon": "",
+        "work_item_type": [
+          "_all"
+        ],
+        "scenes": []
+      },
+      {
+        "type": "VIEW",
+        "key": "view_9w9z",
+        "name": "网格",
+        "description": "视图页功能",
+        "icon": "{\"color\":\"#B449C2\",\"type\":\"icon-openapp_view_chart\"}",
+        "work_item_type": [
+          "_all"
+        ],
+        "scenes": []
+      },
+      {
+        "type": "CONFIG",
+        "icon": "",
+        "work_item_type": [],
+        "scenes": [],
+        "key": "config_xi8l",
+        "name": "",
+        "description": "插件配置页功能"
+      },
+      {
+        "type": "BUTTON",
+        "icon": "",
+        "work_item_type": [
+          "_all"
+        ],
+        "scenes": [
+          4
+        ],
+        "key": "button_demo",
+        "name": "链接按钮",
+        "description": "详情页节点按钮功能"
+      },
+      {
+        "type": "BUTTON",
+        "icon": "",
+        "work_item_type": [
+          "_all"
+        ],
+        "scenes": [
+          3
+        ],
+        "key": "button_id",
+        "name": "预览按钮",
+        "description": "详情页按钮功能"
+      },
+      {
+        "type": "CONTROL",
+        "icon": "",
+        "work_item_type": [
+          "_all"
+        ],
+        "scenes": [
+          1,
+          2
+        ],
+        "key": "control_demo",
+        "name": "进度条控件",
+        "description": "控件功能"
+      },
+      {
+        "type": "BOARD",
+        "icon": "{\"color\":\"#B449C2\",\"type\":\"work_object_icon_rocket\"}",
+        "work_item_type": [
+          "_all"
+        ],
+        "key": "board_n57b",
+        "name": "排班管理",
+        "description": "导航独立路由页功能"
+      }
+    ]
+  },
+  "dependency": {
+
+  },
+  "externals": {
+
+  }
+}

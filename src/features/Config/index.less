@@ -1,0 +1,32 @@
+.config-container {
+  height: 100%;
+  padding: 0 48px 24px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .content {
+    .rule-item {
+      margin-top: 12px;
+      padding: 12px;
+      border: solid 1px lightgray;
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .delete {
+        font-weight: 600;
+        cursor: pointer;
+        color: red;
+      }
+    }
+    .empty {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
