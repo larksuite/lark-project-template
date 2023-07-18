@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Cursor, BriefField, WorkItem } from '@lark-project/js-sdk';
+import { Context, BriefField, WorkItem } from '@lark-project/js-sdk';
 import { Toast } from '@douyinfe/semi-ui';
 import SDKClient from '@lark-project/js-sdk';
-import { sdkInstance } from '../../../utils';
+import { sdkManager } from '../../../utils';
+import useSdkContext from '../../../hooks/useSdkContext';
 
 interface Document {
   key: string;
@@ -13,21 +14,12 @@ const useModel = () => {
   const [fieldList, setFieldList] = useState<BriefField[]>([]);
   const [documents, setDocuments] = useState<Document[]>([]);
   const [workItem, setWorkItem] = useState<WorkItem>();
-  const [detailPage, setDetailPage] = useState<Cursor['detailPage']>();
-  const { activeWorkItem } = detailPage || {};
+  const content: Context | undefined = useSdkContext();
 
   useEffect(() => {
     (async () => {
-      try {
-        const sdk = await sdkInstance.config();
-        sdk.cursor.watch(nextValue => {
-          setDetailPage(nextValue.detailPage);
-        });
-        setDetailPage(sdk?.cursor?.detailPage);
-        setSdk(sdk);
-      } catch (error) {
-        console.error('SDK 调用失败', error);
-      }
+      const sdk = await sdkManager.getSdkInstance();
+      setSdk(sdk);
     })();
   }, []);
 
@@ -46,8 +38,8 @@ const useModel = () => {
   };
 
   useEffect(() => {
-    if (!sdk || !activeWorkItem) return;
-    const { spaceId, workObjectId, id } = activeWorkItem;
+    if (!sdk || !content?.activeWorkItem) return;
+    const { spaceId, workObjectId, id } = content?.activeWorkItem;
     (async () => {
       try {
         const detail = await sdk.WorkItem.load({
@@ -65,7 +57,7 @@ const useModel = () => {
         Toast.error(e.message);
       }
     })();
-  }, [sdk, activeWorkItem]);
+  }, [content?.activeWorkItem]);
 
   useEffect(() => {
     if (!Array.isArray(fieldList) || fieldList.length === 0 || !workItem) {
