@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { PLUGIN_ID } from '../constants';
 
 interface ResWrapper<T = {}> {
   message: string;
@@ -8,8 +7,6 @@ interface ResWrapper<T = {}> {
 }
 axios.interceptors.request.use(
   config => {
-    const token = localStorage.getItem(`${PLUGIN_ID}_token`) || '';
-    config.headers['X-TOKEN'] = token;
     return config;
   },
   err => Promise.reject(err),
