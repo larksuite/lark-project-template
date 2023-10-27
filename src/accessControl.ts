@@ -1,4 +1,5 @@
 // Get the login status of the plug-in
+// If return false, will call the function `authorize` with a code
 export function isLogin() {
   return true;
 }
