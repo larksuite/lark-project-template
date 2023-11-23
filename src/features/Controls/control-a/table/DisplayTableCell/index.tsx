@@ -1,5 +1,5 @@
 import React from 'react';
-import { Fragment, Text } from '@lark-project/Pingere';
+import { Fragment } from '@lark-project/Pingere';
 import { IControlTableCellProps } from '../../../../../constants/type';
 
 const containerStyles = {
