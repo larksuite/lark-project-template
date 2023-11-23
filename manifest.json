@@ -67,7 +67,8 @@
         ],
         "scenes": [
           1,
-          2
+          2,
+          6
         ],
         "key": "control_demo",
         "name": "进度条控件",
@@ -86,9 +87,8 @@
     ]
   },
   "dependency": {
-
-  },
-  "externals": {
-
+    "useSafeFormikFieldState": {
+      "version": "0.0.0"
+    }
   }
 }
