@@ -4,4 +4,5 @@ const buildConfig: IPluginCustomBuildConfig = {
     useSafeFormikFieldState: 'useSafeFormikFieldState',
   },
 };
-export default buildConfig;
+
+export { buildConfig };
