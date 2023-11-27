@@ -1,5 +1,7 @@
 import { IPluginCustomBuildConfig } from '@lark-project/js-sdk';
 const buildConfig: IPluginCustomBuildConfig = {
-  externals: {},
+  externals: {
+    useSafeFormikFieldState: 'useSafeFormikFieldState',
+  },
 };
 export default buildConfig;
