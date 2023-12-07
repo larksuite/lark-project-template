@@ -7,5 +7,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # lpm log
-.log/**
+.log
 lpm.**.log
+
+.DS_Store
