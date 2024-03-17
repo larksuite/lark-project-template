@@ -11,3 +11,5 @@ yarn-error.log*
 lpm.**.log
 
 .DS_Store
+
+.vscode
