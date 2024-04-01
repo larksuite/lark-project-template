@@ -2,5 +2,8 @@
 node_modules
 yarn-debug.log*
 yarn-error.log*
-.log
 dist
+
+.lpm
+.log
+.lpm-cache
