@@ -24,10 +24,5 @@ export default class CustomFieldMetaModel extends FieldMetaModel {
     // Label 上更多信息的 tooltip
     tooltip: '',
   };
-
-  validateField = async (value: any): Promise<undefined | string> => {
-    return undefined;
-  };
-
   fieldConfigDescriptor = new FieldConfigDescriptor();
 }
