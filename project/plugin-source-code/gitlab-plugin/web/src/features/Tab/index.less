@@ -1,0 +1,162 @@
+/**
+ * Copyright (2024) Bytedance Ltd. and/or its affiliates 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0 
+ * 
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and 
+ * limitations under the License. 
+ */
+
+.meego-plugin-gitlab-tab-container {
+  position: relative;
+
+  .meego-plugin-gitlab-tip {
+    position: fixed;
+    right: 24px;
+    bottom: 89px;
+  }
+  .collapse *::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.meego-plugin-gitlab-tab {
+  .semi-collapse-item {
+    border-bottom: none;
+  }
+
+  .semi-table-bordered .semi-table-container {
+    border: none;
+  }
+
+  .semi-table-thead {
+    .semi-table-row .semi-table-row-head {
+      border-right: none !important;
+    }
+  }
+
+  .action {
+    font-weight: 600;
+  }
+
+  .semi-table-row-cell {
+    padding: 12px !important;
+  }
+
+  .user-cell {
+    width: 100%;
+    display: flex;
+
+    .email {
+      width: calc(100% - 28px);
+    }
+
+    .more {
+      width: 28px;
+      margin-left: 2px;
+      cursor: unset;
+    }
+  }
+
+  .title-cell {
+    font-weight: 600;
+    color: var(--semi-color-text-0);
+
+    &.link-cell {
+      cursor: pointer;
+      a {
+        color: var(--semi-color-text-0);
+      }
+    }
+
+    &.link-cell:hover {
+      a {
+        color: var(--semi-color-link-hover);
+      }
+    }
+  }
+
+  .semi-collapse-header-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .semi-table-row-cell {
+    white-space: nowrap;
+  }
+
+  .semi-table-row-cell:last-child {
+    border-right: none !important;
+  }
+
+  .semi-table-thead > .semi-table-row > .semi-table-row-head {
+    word-break: normal;
+  }
+
+  .semi-table-placeholder {
+    border-right: none !important;
+  }
+}
+
+.meego-plugin-gitlab-help-link {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 12px 16px 0 16px;
+  margin-bottom: -6px;
+
+  .semi-typography-link {
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+
+    a,
+    .semi-typography-link-text {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    svg {
+      margin-right: 10px;
+    }
+  }
+}
+
+.meego-plugin-gitlab-tip-popver {
+  padding: 24px;
+  width: 322px;
+  background-color: var(--semi-color-bg-1);
+  border: 1px solid var(--semi-color-border);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  .meego-plugin-gitlab-tip-popver-title {
+    color: var(--semi-color-text-0);
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .meego-plugin-gitlab-tip-popver-info {
+    margin-top: 8px;
+    color: var(--semi-color-text-1);
+    font-size: 14px;
+
+    .meego-plugin-gitlab-tip-popver-info-command {
+      color: var(--semi-color-text-0);
+      font-weight: 500;
+    }
+  }
+
+  .meego-plugin-gitlab-tip-popver-footer {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
