@@ -1,0 +1,3 @@
+[submodule "project/meego_meeting_plugin"]
+	path = project/meego_meeting_plugin
+	url = https://github.com/jimu5/meego_meeting_plugin.git
