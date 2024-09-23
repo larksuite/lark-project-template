@@ -1,0 +1,22 @@
+html {
+  overflow: hidden;
+}
+body {
+  height: fit-content;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  &-mobile {
+    padding: 8px 8px 0 8px;
+  }
+  .content-textarea {
+    max-height: 85vh;
+    overflow: auto;
+  }
+  .content-operate {
+    display: flex;
+    justify-content: end;
+    margin-top: 16px;
+  }
+}
