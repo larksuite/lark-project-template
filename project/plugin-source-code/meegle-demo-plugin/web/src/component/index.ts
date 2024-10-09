@@ -1,3 +1,3 @@
 export * from './bulletinConfig';
-export * from './fieldManger';
+export * from './fieldManager';
 export * from './biz';
