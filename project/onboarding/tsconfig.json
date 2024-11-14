@@ -2,7 +2,11 @@
   "compilerOptions": {
     "module": "esnext",
     "target": "es6",
-    "lib": ["dom", "esnext"],
+    "lib": [
+      "es6",
+      "dom",
+      "es7"
+    ],
     "sourceMap": true,
     "allowJs": true,
     "experimentalDecorators": true,
@@ -20,8 +24,14 @@
     "strict": false,
     "downlevelIteration": true,
     "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
   },
-  "include": ["src", "global.d.ts"],
-  "exclude": ["node_modules", "dist"]
+  "include": [
+    "src",
+    "global.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
