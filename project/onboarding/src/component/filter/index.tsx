@@ -37,6 +37,6 @@ export const Filter = () => {
     } catch (e) {
       sdk.toast.error(JSON.stringify(e));
     }
-  }, [spaceId, workObjectId]);
+  }, [spaceId, workObjectId, searchIdValue]);
   return <Button onClick={open}>{i18n('filter')}</Button>;
 };
