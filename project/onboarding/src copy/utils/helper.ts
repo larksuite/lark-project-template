@@ -33,6 +33,19 @@ export const isUrl = url => {
 
   return false;
 };
+export const validateUrl = (url: string) =>
+  new Promise((resolve, reject) => {
+    (async () => {
+      if (!isUrl(url)) {
+        await window.JSSDK.toast.error({
+          content: '请输入有效链接',
+          duration: 3,
+        });
+        reject(new Error('url 校验失败'));
+      }
+      resolve(true);
+    })();
+  });
 export const getToken = async () => {
   let token = '';
   try {

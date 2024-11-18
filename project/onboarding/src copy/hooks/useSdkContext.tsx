@@ -1,6 +1,5 @@
 import type { Context, unwatch } from '@lark-project/js-sdk';
 import { useEffect, useState } from 'react';
-import { sdk } from '../jssdk';
 
 const useSdkContext = () => {
   const [context, setContext] = useState<Context | undefined>();
@@ -8,7 +7,7 @@ const useSdkContext = () => {
     let unwatch: unwatch | undefined;
     (async () => {
       try {
-        sdk.Context.load().then(ctx => {
+        window.JSSDK.Context.load().then(ctx => {
           setContext(ctx);
           unwatch = ctx.watch(nextCtx => {
             setContext(nextCtx);

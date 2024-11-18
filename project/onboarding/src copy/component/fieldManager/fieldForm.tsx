@@ -5,13 +5,11 @@ import { observer } from 'mobx-react';
 import { BriefField, Field, FieldType } from '@lark-project/js-sdk';
 import { debounce } from 'lodash-es';
 import dashBoardStore from '../../store/dashBoard';
-import { fieldToComp } from './const';
 import { useSdkContext } from '../../hooks';
 import { IUpdateField } from '../../types/openapi';
 import './fieldForm.less';
 import { isMobile } from '../../utils';
-import { sdk } from '../../jssdk';
-import { useI18n } from '../../hooks/useI18n';
+import { FieldText } from './comp/fieldText';
 
 export interface BaseFieldProps {
   label: string;
@@ -24,14 +22,10 @@ export interface BaseFieldProps {
   style?: React.CSSProperties | undefined;
   [prop: string]: any;
 }
-interface IFieldFormProps {
-  active: string;
-}
 type FieldMap = Map<string, Field>;
-export const FieldForm: React.FC<IFieldFormProps> = observer(({ active }) => {
+export const FieldForm: React.FC = observer(() => {
   const formApi = useRef<FormApi>();
   const sdkContext = useSdkContext();
-  const i18n = useI18n();
   const [fieldsConfigMap, setFieldsConfigMap] = useState<Map<string, Field>>(new Map());
   const { fieldsTypeGrop } = dashBoardStore;
   const getFieldsConfig = async (fields: BriefField[]) => {
@@ -39,7 +33,7 @@ export const FieldForm: React.FC<IFieldFormProps> = observer(({ active }) => {
       if (!sdkContext?.activeWorkItem?.id) return;
       const { spaceId = '', workObjectId = '' } = sdkContext.activeWorkItem;
       const promises = fields.map(({ id }) =>
-        sdk.Field.load({
+        window.JSSDK.Field.load({
           spaceId,
           workObjectId,
           fieldId: id,
@@ -62,11 +56,7 @@ export const FieldForm: React.FC<IFieldFormProps> = observer(({ active }) => {
       console.log(error);
     }
   };
-  const fieldItems = useMemo(() => fieldsTypeGrop[active] || [], [active]);
-  const RenderComp: React.FC<BaseFieldProps> = useMemo(() => {
-    const Comp = fieldToComp[active];
-    return observer(Comp);
-  }, [active]);
+  const fieldItems = fieldsTypeGrop.link;
   useEffect(() => {
     getFieldsConfig(fieldItems);
   }, [fieldItems, sdkContext?.activeWorkItem?.id]);
@@ -83,13 +73,18 @@ export const FieldForm: React.FC<IFieldFormProps> = observer(({ active }) => {
         },
         updateFields,
       );
-      // if (res.err_code !== 0) {
-      //   await sdk.toast.error(`字段更新失败: ${res?.err_msg}`);
-      //   return;
-      // }
-      // await sdk.toast.success('字段更新成功');
+      if (res.err_code !== 0) {
+        await window.JSSDK.toast.error(`字段更新失败: ${res?.err_msg}`);
+        return;
+      }
+      await window.JSSDK.toast.success('字段更新成功');
+      await dashBoardStore.getWorkItemInfo({
+        spaceId,
+        workItemId: id,
+        workObjectId,
+      });
     } catch (error) {
-      sdk.toast.error('服务端异常');
+      window.JSSDK.toast.error('服务端异常');
     }
   }, 500);
   const getFieldItemStyle = fieldType => {
@@ -113,12 +108,12 @@ export const FieldForm: React.FC<IFieldFormProps> = observer(({ active }) => {
 
   const renderFieldItems = useMemo(
     () =>
-      fieldItems.map(item => {
+      fieldItems?.map(item => {
         const isSystemCalculateField = fieldsConfigMap.get(item.id)?.isSystemCalculateField;
         const disabled = Boolean(isSystemCalculateField);
         let tooltipContent = '';
         if (isSystemCalculateField) {
-          tooltipContent = i18n('first');
+          tooltipContent = '系统计算字段，不可编辑';
         }
         const renderExtraText = (
           <div
@@ -133,7 +128,7 @@ export const FieldForm: React.FC<IFieldFormProps> = observer(({ active }) => {
         );
         return (
           <Row key={item.id}>
-            <RenderComp
+            <FieldText
               field={item.id}
               fieldType={item.type}
               label={item.name}
@@ -149,7 +144,7 @@ export const FieldForm: React.FC<IFieldFormProps> = observer(({ active }) => {
           </Row>
         );
       }),
-    [fieldItems, RenderComp, fieldsConfigMap],
+    [fieldItems, fieldsConfigMap],
   );
   return (
     <Form

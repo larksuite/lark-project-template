@@ -3,16 +3,22 @@ import { Form, useFieldState, useFormApi } from '@douyinfe/semi-ui';
 import type { CommonFieldProps } from '@douyinfe/semi-ui/lib/es/form';
 import { FieldType } from '@lark-project/js-sdk';
 import type { BaseFieldProps } from '../fieldForm';
-import './fieldCommon.less';
+import dashBoardStore from '../../../store/dashBoard';
 import { isUrl } from '../../../utils';
 
 export function FieldText({ onUpdate, fieldType, ...props }: BaseFieldProps) {
   const { field } = props;
   const formApi = useFormApi();
   const inputRef = useRef<HTMLTextAreaElement>(null);
+  const { workItemInfo } = dashBoardStore;
+  const currentFieldValue = dashBoardStore.getWorkInfoFieldValue(field);
   const { touched } = useFieldState(field);
   const isTouched = !!touched;
   const isLink = fieldType === FieldType.link;
+  useEffect(() => {
+    if (!currentFieldValue) return;
+    formApi.setValue(field, currentFieldValue);
+  }, [workItemInfo]);
   useEffect(() => {
     if (isTouched && inputRef.current) {
       inputRef.current?.focus?.();
@@ -30,6 +36,7 @@ export function FieldText({ onUpdate, fieldType, ...props }: BaseFieldProps) {
     const trimVal = `${value}`.trim();
     if (isLink && trimVal.length && !isUrl(trimVal)) return;
     setTouched(false);
+    if (currentFieldValue === trimVal) return;
     await onUpdate({
       field_key: field,
       field_value: value || '',
