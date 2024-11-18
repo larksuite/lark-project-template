@@ -24,21 +24,6 @@
     "en_US": "Please fill in a valid link",
     "ja_JP": "一"
   },
-  "filter": {
-    "zh_CN": "筛选",
-    "en_US": "Filter",
-    "ja_JP": "一"
-  },
-  "generateIdSuccessfully": {
-    "zh_CN": "生成 searchId ：{searchId}",
-    "en_US": "Generate searchId: {searchId}",
-    "ja_JP": "一"
-  },
-  "cancelGenerateId": {
-    "zh_CN": "取消生成 searchId",
-    "en_US": "Cancel generating searchId",
-    "ja_JP": "一"
-  },
   "text": {
     "zh_CN": "文本",
     "en_US": "Text",
