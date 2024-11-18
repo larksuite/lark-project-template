@@ -4,32 +4,12 @@
   "pluginSecret": "",
   "resources": [
     {
-      "id": "page_web",
-      "entry": "./src/features/page/index.tsx"
-    },
-    {
-      "id": "page_mobile",
-      "entry": "./src/features/page/index.tsx"
-    },
-    {
       "id": "tab_web",
       "entry": "./src/features/tab/index.tsx"
     },
     {
       "id": "tab_mobile",
       "entry": "./src/features/tab/index.tsx"
-    },
-    {
-      "id": "config_web",
-      "entry": "./src/features/config/index.tsx"
-    },
-    {
-      "id": "button_mobile",
-      "entry": "./src/features/button/index.tsx"
-    },
-    {
-      "id": "button_web",
-      "entry": "./src/features/button/index.tsx"
     }
   ]
 }
