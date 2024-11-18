@@ -1,6 +1,11 @@
 import { AUTHORIZATION } from '../constants';
 import { sdkStorage } from './sdkAction';
 
+function getAppDevice() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+export const isMobile = getAppDevice();
+
 export const isUrl = url => {
   const protocolAndDomainRE = /^(?:\w+:)?\/\/(\S+)$/;
   const localhostDomainRE = /^localhost[\:?\d]*(?:[^\:?\d]\S*)?$/;

@@ -1,5 +1,7 @@
 import { action, computed, makeObservable, observable, runInAction } from 'mobx';
 import { BriefField } from '@lark-project/js-sdk';
+import { updateWorkItem, IPathParams } from '../../api/dashBoard';
+import { IUpdateField } from '../../types';
 import { sdk } from '../../jssdk';
 
 // openapi 文档：https://meego-hc.larkoffice.com/b/helpcenter/1p8d7djs/53kr9loy
@@ -26,6 +28,26 @@ class DashBoardStore {
     });
   }
 
+  // 通过 openapi 更新工作项;
+  @action
+  async updateWorkItem(
+    { project_key, work_item_id, work_item_type_key }: IPathParams,
+    updateFields: IUpdateField[],
+  ) {
+    try {
+      return await updateWorkItem(
+        {
+          project_key,
+          work_item_id,
+          work_item_type_key,
+        },
+        updateFields,
+      );
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
+  }
   @computed
   get sdkFieldsMap() {
     const { workObjectFields } = this;

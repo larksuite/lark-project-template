@@ -5,11 +5,9 @@ import { FieldType } from '@lark-project/js-sdk';
 import type { BaseFieldProps } from '../fieldForm';
 import './fieldCommon.less';
 import { isUrl } from '../../../utils';
-import { useI18n } from '../../../hooks/useI18n';
 
 export function FieldText({ onUpdate, fieldType, ...props }: BaseFieldProps) {
   const { field } = props;
-  const i18n = useI18n();
   const formApi = useFormApi();
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const { touched } = useFieldState(field);
@@ -49,13 +47,13 @@ export function FieldText({ onUpdate, fieldType, ...props }: BaseFieldProps) {
 
               return isUrl(value);
             },
-            message: i18n('fillAValidLink'),
+            message: '请输入有效链接',
           },
         ],
       };
     }
     return {};
-  }, [isLink, i18n]);
+  }, [isLink]);
   return (
     <Form.TextArea
       rows={1}

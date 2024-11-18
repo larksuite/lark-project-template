@@ -9,6 +9,7 @@ import { fieldToComp } from './const';
 import { useSdkContext } from '../../hooks';
 import { IUpdateField } from '../../types/openapi';
 import './fieldForm.less';
+import { isMobile } from '../../utils';
 import { sdk } from '../../jssdk';
 import { useI18n } from '../../hooks/useI18n';
 
@@ -72,10 +73,23 @@ export const FieldForm: React.FC<IFieldFormProps> = observer(({ active }) => {
   const updateFieldHandler = debounce(async (updateField: IUpdateField) => {
     try {
       if (!sdkContext?.activeWorkItem?.id) return;
-      // 调用 「更新工作项」 API，完成更新操作
-      sdk.toast.info(i18n('callAPIToComplete'));
+      const { id, spaceId, workObjectId } = sdkContext.activeWorkItem;
+      const updateFields = [updateField];
+      const res = await dashBoardStore.updateWorkItem(
+        {
+          project_key: spaceId,
+          work_item_id: id,
+          work_item_type_key: workObjectId,
+        },
+        updateFields,
+      );
+      // if (res.err_code !== 0) {
+      //   await sdk.toast.error(`字段更新失败: ${res?.err_msg}`);
+      //   return;
+      // }
+      // await sdk.toast.success('字段更新成功');
     } catch (error) {
-      sdk.toast.error(i18n('serverException'));
+      sdk.toast.error('服务端异常');
     }
   }, 500);
   const getFieldItemStyle = fieldType => {
@@ -89,7 +103,7 @@ export const FieldForm: React.FC<IFieldFormProps> = observer(({ active }) => {
       FieldType.treeMultiSelect,
       FieldType.number,
     ];
-    if (selectField.includes(fieldType)) {
+    if (!isMobile && selectField.includes(fieldType)) {
       width = '30vw';
     }
     return {
@@ -104,7 +118,7 @@ export const FieldForm: React.FC<IFieldFormProps> = observer(({ active }) => {
         const disabled = Boolean(isSystemCalculateField);
         let tooltipContent = '';
         if (isSystemCalculateField) {
-          tooltipContent = i18n('fieldSystemCalculate');
+          tooltipContent = i18n('first');
         }
         const renderExtraText = (
           <div
@@ -127,7 +141,7 @@ export const FieldForm: React.FC<IFieldFormProps> = observer(({ active }) => {
               pure={false}
               key={item.id}
               fieldClassName="plugin-form-field"
-              placeholder={i18n('toBeFilled')}
+              placeholder="待填"
               style={getFieldItemStyle(item.type)}
               onUpdate={async arg => updateFieldHandler(arg)}
               extraText={renderExtraText}
@@ -139,8 +153,8 @@ export const FieldForm: React.FC<IFieldFormProps> = observer(({ active }) => {
   );
   return (
     <Form
-      labelPosition="left"
-      labelWidth="180px"
+      labelPosition={isMobile ? 'top' : 'left'}
+      labelWidth={isMobile ? '1000%' : '180px'}
       labelCol={{ span: 2 }}
       getFormApi={api => {
         formApi.current = api;
