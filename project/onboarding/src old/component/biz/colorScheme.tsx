@@ -4,7 +4,6 @@ import { THEME_ATTRIBUTE } from '../../constants';
 import { Mode } from '../../types';
 import './colorScheme.less';
 
-// 暗黑模式
 export function ColorScheme(props) {
   const context = useSdkContext();
   const changeColorScheme = () => {

@@ -4,6 +4,7 @@ import './index.less';
 import { Entry, FieldManager } from '../../component';
 import { Filter } from '../../component/filter';
 
+// tab点位入口文件
 const container = document.createElement('div');
 container.id = 'app';
 document.body.appendChild(container);

@@ -28,8 +28,6 @@ export const isUrl = url => {
 
   return false;
 };
-
-// 获取本地存储的token
 export const getToken = async () => {
   let token = '';
   try {

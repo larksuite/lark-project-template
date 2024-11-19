@@ -4,7 +4,6 @@ import { sdk } from '../../jssdk';
 import { useSdkContext } from '../../hooks';
 import { useI18n } from '../../hooks/useI18n';
 
-// 筛选器
 export const Filter = () => {
   const [spaceId, setSpaceId] = useState<string>();
   const [workObjectId, setWorkObjectId] = useState<string>();
