@@ -9,7 +9,7 @@ const request = axios.create({
 request.interceptors.request.use(
   async config => {
     const headers = await getToken();
-    // 将获取的 token 添加到请求头中
+    // Please Add the obtained token to the request header.
     console.log('headers', headers);
     return config;
   },

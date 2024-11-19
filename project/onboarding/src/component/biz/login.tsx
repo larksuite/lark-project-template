@@ -11,7 +11,7 @@ export function Login(props: React.PropsWithChildren) {
       try {
         const { code } = await sdk.utils.getAuthCode();
         const result = await loginAuth(code);
-        // 获取到token后，登陆成功
+        // After obtaining the token, the login is successful.
         const GET_TOKEN_SUCCESS = false;
         if (GET_TOKEN_SUCCESS) {
           setIsLogin(true);

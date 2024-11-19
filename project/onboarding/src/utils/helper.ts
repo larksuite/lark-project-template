@@ -29,7 +29,7 @@ export const isUrl = url => {
   return false;
 };
 
-// 获取本地存储的token
+// Get the token stored locally.
 export const getToken = async () => {
   let token = '';
   try {

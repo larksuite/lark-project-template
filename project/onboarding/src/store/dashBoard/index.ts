@@ -2,17 +2,17 @@ import { action, computed, makeObservable, observable, runInAction } from 'mobx'
 import { BriefField } from '@lark-project/js-sdk';
 import { sdk } from '../../jssdk';
 
-// openapi 文档：https://meego-hc.larkoffice.com/b/helpcenter/1p8d7djs/53kr9loy
+// For details of OpenAPI, please refer to：https://meego-hc.larkoffice.com/b/helpcenter/1p8d7djs/53kr9loy
 class DashBoardStore {
   @observable
-  // sdk 工作项配置获取到的字段列表;
+  // The field list obtained by the SDK work item configuration
   workObjectFields: BriefField[] = [];
 
   constructor() {
     makeObservable(this);
   }
 
-  // 通过 sdk 获取工作项配置的基本信息的字段列表
+  // Obtain the field list of the basic information of work item configuration through the SDK.
   @action
   async getWorkObjectFields(spaceId: string, workObjectId: string) {
     const workObject = await sdk.WorkObject.load({
@@ -36,7 +36,7 @@ class DashBoardStore {
     return map;
   }
 
-  // 按照字段类型分组, 用语根据激活的 tab， 渲染字段列表
+  // Group by field type. It is used to render the field list according to the activated tab.
   @computed
   get fieldsTypeGrop() {
     const { workObjectFields } = this;

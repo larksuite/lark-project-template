@@ -7,7 +7,7 @@ import './fieldCommon.less';
 import { isUrl } from '../../../utils';
 import { useI18n } from '../../../hooks/useI18n';
 
-// 文本&链接
+// Text & Link
 export function FieldText({ onUpdate, fieldType, ...props }: BaseFieldProps) {
   const { field } = props;
   const i18n = useI18n();

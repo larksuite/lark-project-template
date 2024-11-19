@@ -6,7 +6,7 @@ export const sdkStorage = {
     try {
       await sdk.storage.setItem(key, JSON.stringify(data));
     } catch (e) {
-      // 当插件存储超出限额时，会抛 OutOfLimitError
+      // When the plugin storage exceeds the limit, an OutOfLimitError will be thrown.
       if (e.name === OutOfLimitError.name) {
         console.log(e.originMessage);
       } else {

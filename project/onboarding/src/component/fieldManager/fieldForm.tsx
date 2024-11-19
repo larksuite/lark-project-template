@@ -70,11 +70,11 @@ export const FieldForm: React.FC<IFieldFormProps> = observer(({ active }) => {
     getFieldsConfig(fieldItems);
   }, [fieldItems, sdkContext?.activeWorkItem?.id]);
 
-  // 通用字段更新方法
+  // General Methods for Field Updates
   const updateFieldHandler = debounce(async (updateField: IUpdateField) => {
     try {
       if (!sdkContext?.activeWorkItem?.id) return;
-      // 服务端调用 「更新工作项」 API，完成更新操作
+      // Calls the "Update Work Item" API to complete the update operation.
       sdk.toast.info(i18n('callAPIToComplete'));
     } catch (error) {
       sdk.toast.error(i18n('serverException'));

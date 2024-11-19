@@ -13,7 +13,7 @@ export function FieldDatePicker({ onUpdate, fieldType, ...props }: BaseFieldProp
     setSelectDateTime(selectMs);
   };
   const onDateTimeBlur = async () => {
-    // 提交选中的时间
+    // Submit the selected time.
     await onUpdate({
       field_key: field,
       field_value: selectDatetime,

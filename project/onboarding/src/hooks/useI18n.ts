@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { useSdkContext } from '.';
 import translation from '../translation.json';
 
-// 多语言能力
+// Multilingual ability.
 export const useI18n = () => {
   const context = useSdkContext();
   const lang = context?.language ?? 'zh_CN';
