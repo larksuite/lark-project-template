@@ -1,0 +1,24 @@
+<%
+  // 点位 to 入口
+  const type2entry = {
+  tab_web: "./src/features/tab/index.tsx",
+  tab_mobile: "./src/features/tab/index.tsx",
+  };
+%>
+<% 
+ const resourcesArr = [];
+ for (const type in pluginType2IdMap) {
+  pluginType2IdMap[type].forEach((id) => {
+    resourcesArr.push({
+      "id": id,
+      "entry": type2entry[type]
+    })
+  })
+ }
+%>
+{
+  "siteDomain": "<%= siteDomain %>",
+  "pluginId": "<%= pluginId %>",
+  "pluginSecret": "<%= pluginSecret %>",
+  "resources": <%= resourcesArr %>
+}
