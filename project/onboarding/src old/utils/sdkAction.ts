@@ -1,5 +1,5 @@
 import { OutOfLimitError } from '@lark-project/js-sdk';
-import { sdk } from './jssdk';
+import { sdk } from '../jssdk';
 
 export const sdkStorage = {
   async setItem(key: string, data) {
