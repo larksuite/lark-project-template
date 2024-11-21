@@ -1,18 +1,21 @@
 <%
-  // 点位 to 入口
+  // 点位入口
   const type2entry = {
   tab_web: "./src/features/tab/index.tsx",
   tab_mobile: "./src/features/tab/index.tsx",
   };
+
+  // 默认入口
+  const defaultEntry = "./src/features/default/index.tsx";
 %>
 <% 
  const resourcesArr = [];
  for (const type in pluginType2IdMap) {
   pluginType2IdMap[type].forEach((id) => {
-    resourcesArr.push({
+    resourcesArr.push(JSON.stringify({
       "id": id,
-      "entry": type2entry[type]
-    })
+      "entry": type2entry?.[type] ?? defaultEntry
+    }))
   })
  }
 %>
