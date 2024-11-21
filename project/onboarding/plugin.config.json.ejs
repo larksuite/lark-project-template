@@ -1,27 +1,31 @@
 <%
+  // 默认入口
+  const defaultEntry = "./src/features/default/index.tsx";
   // 点位入口
   const type2entry = {
   tab_web: "./src/features/tab/index.tsx",
   tab_mobile: "./src/features/tab/index.tsx",
   };
 
-  // 默认入口
-  const defaultEntry = "./src/features/default/index.tsx";
+  // 映射逻辑
+  const resourcesArr = [];
+  for (const type in pluginType2IdMap) {
+    pluginType2IdMap[type].forEach((id) => {
+      resourcesArr.push({
+        "id": id,
+        "entry": type2entry?.[type] ?? defaultEntry
+      })
+    })
+  }
+  // 构建要输出的完整对象
+  const configObject = {
+      "siteDomain": siteDomain,
+      "pluginId": pluginId,
+      "pluginSecret": pluginSecret,
+      "resources": resourcesArr
+  };
+  
+  // 将完整对象转换为JSON字符串
+  const configJson = JSON.stringify(configObject);
 %>
-<% 
- const resourcesArr = [];
- for (const type in pluginType2IdMap) {
-  pluginType2IdMap[type].forEach((id) => {
-    resourcesArr.push(JSON.stringify({
-      "id": id,
-      "entry": type2entry?.[type] ?? defaultEntry
-    }))
-  })
- }
-%>
-{
-  "siteDomain": "<%= siteDomain %>",
-  "pluginId": "<%= pluginId %>",
-  "pluginSecret": "<%= pluginSecret %>",
-  "resources": <%= resourcesArr %>
-}
+<%= configJson %>
