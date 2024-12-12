@@ -1,11 +1,26 @@
-{
-  "siteDomain": "<%= siteDomain %>",
-  "pluginId": "<%= pluginId %>",
-  "pluginSecret": "<%= pluginSecret %>",
-  "resources": [
-    {
-      "id": "resource-key",
-      "entry": "./src/features/demo/index.tsx"
-    }
-  ]
-}
+<%
+  // 默认入口
+  const defaultEntry = "./src/features/demo/index.tsx";
+
+  // 映射逻辑
+  const resourcesArr = [];
+  for (const type in pluginType2IdMap) {
+    pluginType2IdMap[type].forEach((id) => {
+      resourcesArr.push({
+        "id": id,
+        "entry": defaultEntry
+      })
+    })
+  }
+  // 构建要输出的完整对象
+  const configObject = {
+      "siteDomain": siteDomain,
+      "pluginId": pluginId,
+      "pluginSecret": pluginSecret,
+      "resources": resourcesArr
+  };
+  
+  // 将完整对象转换为JSON字符串
+  const configJson = JSON.stringify(configObject, null, 4);
+%>
+<%- configJson %>
