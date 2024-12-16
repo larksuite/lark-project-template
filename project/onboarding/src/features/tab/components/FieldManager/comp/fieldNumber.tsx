@@ -1,6 +1,6 @@
-import React from 'react';
-import { Form } from '@douyinfe/semi-ui';
-import type { BaseFieldProps } from '../FieldForm';
+import React from "react";
+import { Form } from "@douyinfe/semi-ui";
+import type { BaseFieldProps } from "../FieldForm";
 
 const { InputNumber } = Form;
 export function FieldNumber({ onUpdate, ...props }: BaseFieldProps) {
@@ -14,7 +14,6 @@ export function FieldNumber({ onUpdate, ...props }: BaseFieldProps) {
   return (
     <InputNumber
       {...props}
-      formatter={value => `${value}`.replace(/\D/g, '')}
       onNumberChange={onNumberChange}
     />
   );
