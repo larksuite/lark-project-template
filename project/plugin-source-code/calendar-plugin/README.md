@@ -167,6 +167,6 @@
 2.  启动应用，命令参考如下
 ```shell
 mvn clean package -Dmaven.test.skip=true
-java -jar target/plugin-calendar-1.0.jar
+java -jar target/calendar-plugin-1.0.jar
 
 
