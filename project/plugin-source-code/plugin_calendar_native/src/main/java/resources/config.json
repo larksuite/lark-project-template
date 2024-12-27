@@ -1,0 +1,12 @@
+{
+  "lark_api_config": {
+    "app_id": "app_id",
+    "app_secret": "app_secret",
+    "base_url": "base_url"
+  },
+  "project_api_config": {
+    "plugin_id": "plugin_id",
+    "plugin_secret": "plugin_secret",
+    "base_url": "base_url"
+  }
+}
