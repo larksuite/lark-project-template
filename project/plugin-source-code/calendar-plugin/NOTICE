@@ -1,0 +1,31 @@
+NOTICES FOR THIRD PARTY SOFTWARE THAT MAY BE CONTAINED IN PORTIONS OF THIS PRODUCT.
+
+Components:
+
+
+spring-boot-starter-parent 3.3.0 : Apache License 2.0
+spring-boot-starter-web 3.5.7 : Apache License 2.0
+com.larksuite.oapi 1.0.0-rc3 : Apache License 2.0
+sqlite-jdbc 3.42.0.0: Apache License 2.0
+oapi-sdk 1.0.15 : Apache License 2.0
+oapi-sdk 2.4.0 : Apache License 2.0
+mybatis 3.5.7 : Apache License 2.0
+ibatis-core 3.0.1 : Apache License 1.0
+junit-jupiter-api 5.8.0 : Eclipse Public License 2.0
+junit-jupiter-engine 5.8.0 : Eclipse Public License 2.0
+mockito-core 5.11.0 : The MIT License
+mockito-junit-jupiter 5.11.0 : The MIT License
+
+License:
+
+Apache License 2.0
+(spring-boot-starter-parent 3.3.0, spring-boot-starter-web 3.5.7, com.larksuite.oapi 1.0.0-rc3, sqlite-jdbc 3.42.0.0, oapi-sdk 1.0.15, oapi-sdk 2.4.0, mybatis 3.5.7)
+
+Apache License 1.0
+(ibatis-core 3.0.1)
+
+Eclipse Public License 2.0
+(junit-jupiter-api 5.8.0, junit-jupiter-engine 5.8.0)
+
+The MIT License
+(mockito-core 5.11.0, mockito-junit-jupiter 5.11.0)
