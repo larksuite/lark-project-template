@@ -1,8 +1,10 @@
-import React, { lazy, Suspense } from 'react';
-import ReactDOM from 'react-dom';
-import { createRoot } from 'react-dom/client';
+import React, { lazy, Suspense } from "react";
+import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
+import "./index.less";
 
-const App = lazy(() => import('./App'));
+// The entry file for tab.
+const App = lazy(() => import("./App"));
 
 export default async function main() {
   await window.JSSDK.shared.setSharedModules({
@@ -10,8 +12,8 @@ export default async function main() {
     ReactDOM,
   });
 
-  const container = document.createElement('div');
-  container.id = 'app';
+  const container = document.createElement("div");
+  container.id = "app";
   document.body.appendChild(container);
   const root = createRoot(container);
 

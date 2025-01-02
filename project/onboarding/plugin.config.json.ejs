@@ -1,6 +1,10 @@
 <%
   // 默认入口
-  const defaultEntry = "./src/features/demo/index.tsx";
+  const defaultEntry = "./src/features/default/index.tsx";
+  // 点位入口
+  const type2entry = {
+  tab_web: "./src/features/tab/index.tsx",
+  };
 
   // 映射逻辑
   const resourcesArr = [];
@@ -8,7 +12,7 @@
     pluginType2IdMap[type].forEach((id) => {
       resourcesArr.push({
         "id": id,
-        "entry": defaultEntry
+        "entry": type2entry?.[type] ?? defaultEntry
       })
     })
   }
