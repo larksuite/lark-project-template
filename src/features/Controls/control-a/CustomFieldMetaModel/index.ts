@@ -19,8 +19,6 @@ export default class CustomFieldMetaModel extends FieldMetaModel {
     key: CONTROL_KEY,
     // 表格/表单实际显示这个
     name: CONTROL_NAME,
-    // 为 true 则不显示 Label，包含 tooltip
-    noLabel: false,
     // Label 上更多信息的 tooltip
     tooltip: '',
   };
