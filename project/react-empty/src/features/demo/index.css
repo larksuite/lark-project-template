@@ -1,19 +1,25 @@
 a.primary {
-  border-color: 1px solid var(--semi-color-border);
+  border: 1px solid var(--semi-color-border);
   background: var(--semi-color-text-0);
   color: var(--semi-color-white);
   padding: 6px 12px;
+  text-decoration: none;
+  border-radius: var(--semi-border-radius-small);
+  cursor: pointer;
 }
 
 a.secondary {
-  border-color:  1px solid var(--semi-color-border);
+  border: 1px solid var(--semi-color-border);
   background: var(--semi-color-white);
   color: var(--semi-color-text-0);
   padding: 6px 12px;
+  text-decoration: none;
+  border-radius: var(--semi-border-radius-small);
+  cursor: pointer;
 }
 
 a.primary:hover {
-  background: var(--semi-color-fill-1);
+  background: var(--semi-color-text-1);
 }
 
 a.secondary:hover {
@@ -54,5 +60,6 @@ a.secondary:hover {
 }
 
 .btn-group {
+  display: flex;
   gap: 16px;
 }
