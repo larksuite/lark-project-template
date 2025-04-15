@@ -1,0 +1,30 @@
+import React from 'react';
+import './index.css';
+
+const App: React.FC = () => {
+return (
+<div className="wrapper">
+  <h1 className="title">
+    <%= pluginName %>
+  </h1>
+  <p className="desc">
+    <span className="desc-text">Get started by editing</span>
+  <pre className="desc-entry"><% entryPath %></pre>
+  </p>
+  <% docs.forEach(function(doc){ %>
+    <a href="<%= doc.url %>" className="
+        <% if (doc.type === 'primary') { %>
+        'primary'
+        <% } else { %>
+        'secondary'
+        <% } %>">
+      <span>
+        <%= doc.title %>
+      </span>
+    </a>
+    <% }); %>
+</div>
+);
+}
+
+export default App;

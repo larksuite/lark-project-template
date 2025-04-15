@@ -1,0 +1,53 @@
+a.primary {
+  background: var(--foreground);
+  color: var(--background);
+  gap: 8px;
+}
+
+a.secondary {
+  border-color: var(--gray-alpha-200);
+  min-width: 158px;
+}
+
+a.primary:hover {
+  background: var(--button-primary-hover);
+  border-color: transparent;
+}
+
+a.secondary:hover {
+  background: var(--button-secondary-hover);
+  border-color: transparent;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+.desc {
+  display: flex;
+  align-items: center;
+  padding: 6px 16px;
+  background: var(--semi-color-tag-corn Flower-0);
+  background: var(--semi-color-tag-cornflower-0);
+  border-radius: 32px;
+  line-height: 20px;
+}
+
+.desc-text {
+  font-weight: 530;
+  margin: 0 10px;
+}
+
+.desc-entry {
+  margin: 0;
+  color:var(--semi-color-primary, '#3250EB')
+}
