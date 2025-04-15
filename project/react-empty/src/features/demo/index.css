@@ -1,22 +1,23 @@
 a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
+  border-color: 1px solid var(--semi-color-border);
+  background: var(--semi-color-text-0);
+  color: var(--semi-color-white);
+  padding: 6px 12px;
 }
 
 a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 158px;
+  border-color:  1px solid var(--semi-color-border);
+  background: var(--semi-color-white);
+  color: var(--semi-color-text-0);
+  padding: 6px 12px;
 }
 
 a.primary:hover {
-  background: var(--button-primary-hover);
-  border-color: transparent;
+  background: var(--semi-color-fill-1);
 }
 
 a.secondary:hover {
-  background: var(--button-secondary-hover);
-  border-color: transparent;
+  background: var(--semi-color-fill-1);
 }
 
 .wrapper {
@@ -36,7 +37,6 @@ a.secondary:hover {
   display: flex;
   align-items: center;
   padding: 6px 16px;
-  background: var(--semi-color-tag-corn Flower-0);
   background: var(--semi-color-tag-cornflower-0);
   border-radius: 32px;
   line-height: 20px;
@@ -45,9 +45,14 @@ a.secondary:hover {
 .desc-text {
   font-weight: 530;
   margin: 0 10px;
+  font-size: 14px;
 }
 
 .desc-entry {
   margin: 0;
   color:var(--semi-color-primary, '#3250EB')
+}
+
+.btn-group {
+  gap: 16px;
 }
