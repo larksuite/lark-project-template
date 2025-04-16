@@ -6,6 +6,13 @@ a.primary {
   text-decoration: none;
   border-radius: var(--semi-border-radius-small);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .icon {
+    color: var(--semi-color-white);
+  }
 }
 
 a.secondary {
@@ -16,6 +23,13 @@ a.secondary {
   text-decoration: none;
   border-radius: var(--semi-border-radius-small);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .icon {
+    color: var(--semi-color-text-0);
+  }
 }
 
 a.primary:hover {
@@ -24,6 +38,11 @@ a.primary:hover {
 
 a.secondary:hover {
   background: var(--semi-color-fill-1);
+}
+
+.icon {
+  font-size: 20px;
+  margin-right: 4px;
 }
 
 .wrapper {

@@ -10,6 +10,7 @@ const App: React.FC = () => {
       </p>
       <div className="btn-group"><% docs.forEach(function(doc){ %>
         <a onClick={() => window.JSSDK.navigation.open("<%= doc.url %>")} className="<% if (doc.type==='primary' ) { %>primary<% } else { %>secondary<% } %>">
+          <svg className="icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" focusable="false"><path d="M2.66675 11.3333L6.66675 7.33325L2.66675 3.33325M8.00008 12.6666H13.3334" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           <span><%= doc.text %></span>
         </a><% }); %>
        </div>
