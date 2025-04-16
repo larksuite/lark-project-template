@@ -1,43 +1,45 @@
 a.primary {
-  border: 1px solid var(--semi-color-border);
-  background: var(--semi-color-text-0);
-  color: var(--semi-color-white);
+  border: 1px solid rgba(28,31,35,.08);
+  background: rgba(28,31,35,1);
+  color: #fff;
   padding: 6px 12px;
   text-decoration: none;
-  border-radius: var(--semi-border-radius-small);
+  border-radius: 6px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 500;
+}
 
-  .icon {
-    color: var(--semi-color-white);
-  }
+a.primary .icon {
+  color: #fff;
 }
 
 a.secondary {
-  border: 1px solid var(--semi-color-border);
-  background: var(--semi-color-white);
-  color: var(--semi-color-text-0);
+  border: 1px solid rgba(28,31,35,.08);
+  background: #fff;
+  color: rgba(28,31,35,1);
   padding: 6px 12px;
   text-decoration: none;
-  border-radius: var(--semi-border-radius-small);
+  border-radius: 6px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 500;
+}
 
-  .icon {
-    color: var(--semi-color-text-0);
-  }
+a.secondary .icon {
+  color: rgba(28,31,35,1);
 }
 
 a.primary:hover {
-  background: var(--semi-color-text-1);
+  background: rgba(28,31,35,.8);
 }
 
 a.secondary:hover {
-  background: var(--semi-color-fill-1);
+  background: rgba(46,50,56,.09);
 }
 
 .icon {
@@ -51,31 +53,39 @@ a.secondary:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .title {
   font-size: 48px;
   margin-bottom: 8px;
+  line-height: 65px;
 }
 
 .desc {
   display: flex;
   align-items: center;
   padding: 6px 16px;
-  background: var(--semi-color-tag-cornflower-0);
+  background: rgba(137,126,246,0.08);
   border-radius: 32px;
   line-height: 20px;
+  margin: 8px 0 24px;
 }
 
 .desc-text {
-  font-weight: 530;
-  margin: 0 10px;
+  font-weight: 500;
+  margin-right: 10px;
   font-size: 14px;
+}
+
+.desc-text > span {
+  margin-right: 10px;
 }
 
 .desc-entry {
   margin: 0;
-  color:var(--semi-color-primary, '#3250EB')
+  color: #3250EB;
 }
 
 .btn-group {
