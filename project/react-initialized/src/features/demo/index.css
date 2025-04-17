@@ -1,6 +1,6 @@
 #app {
   min-height: 400px;
-  min-width: 450px;
+  width: 100%;
 }
 
 a.primary {
@@ -53,6 +53,7 @@ a.secondary:hover {
 }
 
 .wrapper {
+  width: 100%;
   min-height: 400px;
   display: flex;
   flex-direction: column;
@@ -66,7 +67,9 @@ a.secondary:hover {
   font-size: 48px;
   margin-bottom: 8px;
   line-height: 65px;
-  word-break: break-word;
+  word-break: break-all;
+  white-space: pre-wrap;
+  width: 100%;
 }
 
 .desc {
@@ -79,12 +82,17 @@ a.secondary:hover {
   border-radius: 32px;
   line-height: 20px;
   margin: 8px 0 24px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .desc-text {
   font-weight: 500;
   margin-right: 10px;
   font-size: 14px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-width: 100%;
 }
 
 .desc-text > span {
@@ -94,9 +102,14 @@ a.secondary:hover {
 .desc-entry {
   margin: 0;
   color: #3250EB;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-width: 100%;
 }
 
 .btn-group {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
+  max-width: 100%;
 }
