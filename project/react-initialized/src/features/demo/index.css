@@ -64,6 +64,8 @@ a.secondary:hover {
 }
 
 .title {
+  display: flex;
+  justify-content: center;
   font-size: 48px;
   margin-bottom: 8px;
   line-height: 65px;
@@ -110,6 +112,7 @@ a.secondary:hover {
 .btn-group {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
   max-width: 100%;
 }
