@@ -61,11 +61,14 @@ a.secondary:hover {
   font-size: 48px;
   margin-bottom: 8px;
   line-height: 65px;
+  word-break: break-word;
 }
 
 .desc {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 6px 16px;
   background: rgba(137,126,246,0.08);
   border-radius: 32px;
