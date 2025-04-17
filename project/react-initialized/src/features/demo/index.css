@@ -1,3 +1,8 @@
+#app {
+  min-height: 400px;
+  min-width: 450px;
+}
+
 a.primary {
   border: 1px solid rgba(28,31,35,.08);
   background: rgba(28,31,35,1);
@@ -48,7 +53,7 @@ a.secondary:hover {
 }
 
 .wrapper {
-  height: 100vh;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
