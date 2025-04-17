@@ -1,6 +1,8 @@
 #app {
   min-height: 400px;
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 a.primary {
@@ -66,9 +68,9 @@ a.secondary:hover {
 .title {
   display: flex;
   justify-content: center;
-  font-size: 48px;
+  font-size: 32px;
   margin-bottom: 8px;
-  line-height: 65px;
+  line-height: 45px;
   word-break: break-all;
   white-space: pre-wrap;
   width: 100%;
@@ -107,6 +109,7 @@ a.secondary:hover {
   white-space: pre-wrap;
   word-break: break-all;
   max-width: 100%;
+  text-align: center;
 }
 
 .btn-group {
