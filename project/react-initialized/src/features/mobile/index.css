@@ -1,6 +1,8 @@
 #app {
-  min-height: 400px;
+  min-height: 460px;
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 a.primary {
@@ -79,7 +81,6 @@ a.secondary:hover {
   flex-direction: column;
   flex-wrap: wrap;
   padding: 6px 16px;
-  background: rgba(137,126,246,0.08);
   border-radius: 32px;
   line-height: 22px;
   margin: 16px 0 36px;
@@ -88,7 +89,7 @@ a.secondary:hover {
 }
 
 .desc-text {
-  margin-right: 10px;
+  margin-bottom: 4px;
   white-space: pre-wrap;
   word-break: break-all;
   max-width: 100%;
