@@ -109,6 +109,7 @@ a.secondary:hover {
   white-space: pre-wrap;
   word-break: break-all;
   max-width: 100%;
+  text-align: center;
 }
 
 .btn-group {

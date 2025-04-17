@@ -16,6 +16,7 @@ a.primary {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 440;
 }
 
 a.primary .icon {
@@ -33,6 +34,7 @@ a.secondary {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 440;
 }
 
 a.secondary .icon {
@@ -86,6 +88,7 @@ a.secondary:hover {
   margin: 16px 0 36px;
   width: 100%;
   box-sizing: border-box;
+  font-weight: 440;
 }
 
 .desc-text {
@@ -105,6 +108,7 @@ a.secondary:hover {
   white-space: pre-wrap;
   word-break: break-all;
   max-width: 100%;
+  text-align: center;
 }
 
 .btn-group {
