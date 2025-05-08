@@ -5,6 +5,7 @@
 ## 目录说明
 ### server
 Gitlab Plugin 服务端代码
+此项目使用了飞书项目的JAVA SDK 需要配置maven环境, 详情请见https://github.com/larksuite/project-oapi-sdk-java
 
 ### web
 Gitlab Plugin 前端代码
