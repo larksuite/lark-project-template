@@ -1,0 +1,11 @@
+{
+  "siteDomain": "",
+  "pluginId": "",
+  "pluginSecret": "",
+  "resources": [
+    {
+      "id": "board_web",
+      "entry": "./src/features/board_web/index.tsx"
+    }
+  ]
+}
