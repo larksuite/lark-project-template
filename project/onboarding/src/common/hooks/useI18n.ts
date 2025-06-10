@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { useSdkContext } from '.';
+import useSdkContext from './useSdkContext';
 import translation from '../../constants/translation.json';
 
 // Multilingual ability.
