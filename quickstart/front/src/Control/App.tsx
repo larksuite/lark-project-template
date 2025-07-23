@@ -14,7 +14,7 @@ export default function App(props: ControlFeatureContext) {
   useEffect(() => {
     const getOptionList = async () => {
       const res = await request.get(
-        'https://byd.xiongdianpku.com/demo/getDemoList',
+        'https://byd.xiongdianpku.com/demo/getDemoList',//替换成真实域名
       );
       setOptionList(
         (res?.data || []).map((item) => ({
