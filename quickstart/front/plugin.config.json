@@ -1,0 +1,11 @@
+{
+    "siteDomain": "https://project.feishu.cn",
+    "pluginId": "MII_xxxx",
+    "pluginSecret": "xxxx",
+    "resources": [
+        {
+            "id": "control",
+            "entry": "./src/Control/index.tsx"
+        }
+    ]
+}
