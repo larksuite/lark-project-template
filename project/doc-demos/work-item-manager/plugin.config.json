@@ -4,8 +4,8 @@
   "pluginSecret": "",
   "resources": [
     {
-      "id": "board_web",
-      "entry": "./src/features/board_web/index.tsx"
+      "id": "page_web_demo",
+      "entry": "./src/features/page_web_demo/index.tsx"
     }
   ]
 }
