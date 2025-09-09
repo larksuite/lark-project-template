@@ -1,0 +1,12 @@
+
+{
+    "siteDomain": "",
+    "pluginId": "",
+    "pluginSecret": "",
+    "resources": [
+        {
+            "id": "view_web_demo",
+            "entry": "./src/features/view_web_demo/index.tsx"
+        }
+    ]
+}
