@@ -1,4 +1,4 @@
-<% if (mode && mode === 'script') { %>
+<% if (!mode || !mode === 'script') { %>
 const App = async () => {
   const context = await window.JSSDK.script.getContext();
   const { workItemId, selectedWorkItems } = context;
