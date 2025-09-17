@@ -1,4 +1,4 @@
-<% if (mode === 'script') { %>
+<!-- <% if (mode === 'script') { %>
 const App = async () => {
   const context = await window.JSSDK.script.getContext();
   const { workItemId, selectedWorkItems } = context;
@@ -17,7 +17,7 @@ const App = async () => {
   }
   await window.JSSDK.script.end();
 };
-<% } else { %>
+<% } else { %> -->
 import React from 'react';
 import './index.css';
 
@@ -56,4 +56,4 @@ const App: React.FC = () => {
 }
 
 export default App;
-<% } %>
+<!-- <% } %> -->
