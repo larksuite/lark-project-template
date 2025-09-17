@@ -1,3 +1,23 @@
+<% if (mode && mode === 'script') { %>
+const App = async () => {
+  const context = await window.JSSDK.script.getContext();
+  const { workItemId, selectedWorkItems } = context;
+  if (workItemId) {
+    await window.JSSDK.clipboard.writeText(String(workItemId));
+    await window.JSSDK.toast.info("复制成功");
+  } else if (selectedWorkItems) {
+    const { selectedWorkItems } = context;
+    await window.JSSDK.clipboard.writeText(
+      selectedWorkItems[0].selectedWorkItemIds.join("\n")
+    );
+    await window.JSSDK.toast.info("复制成功");
+  } else {
+    // 新建点位无对应workItemId，复制失败
+    await window.JSSDK.toast.error("复制失败：新建点位无对应工作项实例ID");
+  }
+  await window.JSSDK.script.end();
+};
+<% } else { %>
 import React from 'react';
 import './index.css';
 
@@ -36,3 +56,4 @@ const App: React.FC = () => {
 }
 
 export default App;
+<% } %>
