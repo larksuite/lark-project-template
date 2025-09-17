@@ -1,8 +1,3 @@
-<% if (mode && mode === 'script') { %>
-export default async function main() {
-  (await import("./App")).default();
-}
-<% } else { %>
 import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom/client';
@@ -26,4 +21,3 @@ export default async function main() {
     </Suspense>
   );
 }
-<% } %>
