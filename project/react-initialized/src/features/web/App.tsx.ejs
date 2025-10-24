@@ -6,7 +6,6 @@ const App = async () => {
     await window.JSSDK.clipboard.writeText(String(workItemId));
     await window.JSSDK.toast.info("复制成功");
   } else if (selectedWorkItems) {
-    const { selectedWorkItems } = context;
     await window.JSSDK.clipboard.writeText(
       selectedWorkItems[0].selectedWorkItemIds.join("\n")
     );
