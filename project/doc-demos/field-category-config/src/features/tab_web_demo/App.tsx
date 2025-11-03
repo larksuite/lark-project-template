@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 import { FieldManagementPage, AUTH_USERS } from '../../pages';
 import { Empty } from '@douyinfe/semi-ui';
+import { IllustrationNoAccess } from '@douyinfe/semi-illustrations';
 import { storage } from '../../utils';
-import './index.css'
+import './index.css';
 const App: React.FC = () => {
   const [showAuth, setShowAuth] = useState<boolean>(false)
   useEffect(() => {
@@ -12,7 +13,7 @@ const App: React.FC = () => {
      })
   }, []);
   if(!showAuth) {
-    return <div className='empty-wrapper'><Empty  title="无权限" description="联系空间管理员，添加权限"/></div>
+    return <div className='empty-wrapper'><Empty  image={<IllustrationNoAccess />}  title="无权限" description="联系空间管理员，添加权限"/></div>
   }
   return (
    <FieldManagementPage />
