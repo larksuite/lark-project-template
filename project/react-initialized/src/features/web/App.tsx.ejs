@@ -13,8 +13,8 @@ const App = async () => {
       await window.JSSDK.clipboard.writeText(
         selectedWorkItemIds.join("\n")
       );
+      await window.JSSDK.toast.info("Copy Successful");
     }
-    await window.JSSDK.toast.info("Copy Successful");
   } else {
     // There is no corresponding workItemId, so the copy failed.
     await window.JSSDK.toast.error("Copy failed: There is no corresponding workItemId");
