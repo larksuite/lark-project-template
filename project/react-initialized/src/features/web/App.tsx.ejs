@@ -6,9 +6,14 @@ const App = async () => {
     await window.JSSDK.clipboard.writeText(String(workItemId));
     await window.JSSDK.toast.info("Copy Successful");
   } else if (selectedWorkItems) {
-    await window.JSSDK.clipboard.writeText(
-      selectedWorkItems[0].selectedWorkItemIds.join("\n")
-    );
+    const selectedWorkItemIds = selectedWorkItems[0].selectedWorkItemIds;
+    if(selectedWorkItemIds.length > 100){
+      await window.JSSDK.toast.error("Copy failed: The number of selected work items exceeds 100");
+    } else {
+      await window.JSSDK.clipboard.writeText(
+        selectedWorkItemIds.join("\n")
+      );
+    }
     await window.JSSDK.toast.info("Copy Successful");
   } else {
     // There is no corresponding workItemId, so the copy failed.
