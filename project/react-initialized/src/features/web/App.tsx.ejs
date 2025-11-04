@@ -4,15 +4,15 @@ const App = async () => {
   const { workItemId, selectedWorkItems } = context;
   if (workItemId) {
     await window.JSSDK.clipboard.writeText(String(workItemId));
-    await window.JSSDK.toast.info("复制成功");
+    await window.JSSDK.toast.info("Copy Successful");
   } else if (selectedWorkItems) {
     await window.JSSDK.clipboard.writeText(
       selectedWorkItems[0].selectedWorkItemIds.join("\n")
     );
-    await window.JSSDK.toast.info("复制成功");
+    await window.JSSDK.toast.info("Copy Successful");
   } else {
-    // 新建点位无对应workItemId，复制失败
-    await window.JSSDK.toast.error("复制失败：新建点位无对应工作项实例ID");
+    // There is no corresponding workItemId, so the copy failed.
+    await window.JSSDK.toast.error("Copy failed: There is no corresponding workItemId");
   }
   await window.JSSDK.script.end();
 };
