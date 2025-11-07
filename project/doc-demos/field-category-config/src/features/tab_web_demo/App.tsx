@@ -6,6 +6,8 @@ import { IllustrationNoAccess } from '@douyinfe/semi-illustrations';
 import { storage } from '../../utils';
 import './index.css';
 const App: React.FC = () => {
+// @desc 权限展示的相关逻辑， 需配合插件配置构成使用
+/* 
   const [showAuth, setShowAuth] = useState<boolean>(false)
   useEffect(() => {
      storage.getItem(AUTH_USERS).then(val => {
@@ -14,7 +16,8 @@ const App: React.FC = () => {
   }, []);
   if(!showAuth) {
     return <div className='empty-wrapper'><Empty  image={<IllustrationNoAccess />}  title="无权限" description="联系空间管理员，添加权限"/></div>
-  }
+  } 
+ */
   return (
    <FieldManagementPage />
   );
