@@ -1,0 +1,11 @@
+{
+  "siteDomain": "",
+  "pluginId": "",
+  "pluginSecret": "",
+  "resources": [
+    {
+      "id": "resourceId",
+      "entry": "./src/features/lite_app_web_i5chkv/index.tsx"
+    }
+  ]
+}
