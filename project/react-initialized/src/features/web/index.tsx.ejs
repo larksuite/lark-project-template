@@ -1,8 +1,16 @@
 <% if (mode && mode === 'script') { %>
+/**
+ * Plugin main entry point
+ * This file is loaded by the plugin runtime and its `main` function is invoked. DO NOT DELETE.
+ */
 export default async function main() {
   (await import("./App")).default();
 }
 <% } else { %>
+/**
+ * Plugin main entry point
+ * This file is loaded by the plugin runtime and its `main` function is invoked. DO NOT DELETE.
+ */
 import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom/client';
