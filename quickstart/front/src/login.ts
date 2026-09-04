@@ -12,7 +12,7 @@ async function checkLogin() {
 
 async function getToken(code) {
   try {
-    const res = await request.post('https://byd.xiongdianpku.com/demo/login', {
+    const res = await request.post('https://www.example.com', {
       code,
     });
     const { token, expire_time } = res.data.data;

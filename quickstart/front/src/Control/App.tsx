@@ -14,7 +14,7 @@ export default function App(props: ControlFeatureContext) {
   useEffect(() => {
     const getOptionList = async () => {
       const res = await request.get(
-        'https://byd.xiongdianpku.com/demo/getDemoList',//替换成真实域名
+        'https://www.example.com',//替换成真实域名
       );
       setOptionList(
         (res?.data || []).map((item) => ({
@@ -33,7 +33,7 @@ export default function App(props: ControlFeatureContext) {
     }
     setLoading(true);
     request
-      .post('https://byd.xiongdianpku.com/demo/updateDescription', {
+      .post('https://www.example.com', {
         project_key: spaceId,
         work_item_type_key: workObjectId,
         work_item_id: workItemId,
